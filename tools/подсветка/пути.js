@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const статика = fileURLToPath(new URL('../../src/статика/', import.meta.url));
 
-// .mjs — модуль для node любой версии; браузеру расширение безразлично, он смотрит на тип ответа
+// .mjs node грузит модулем без распознавания синтаксиса; браузер смотрит не на расширение, а на тип ответа
 export const имяДвижка = 'shiki-bsl.mjs';
 export const каталогДвижка = path.join(статика, 'подсветка');
 export const файлДвижка = path.join(каталогДвижка, имяДвижка);

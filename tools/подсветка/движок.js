@@ -6,7 +6,7 @@ import { createCssVariablesTheme } from '@shikijs/core';
 import { createJavaScriptRawEngine } from '@shikijs/engine-javascript/raw';
 import bsl from '@shikijs/langs-precompiled/bsl';
 
-// строку длиннее грамматика не разбирает вовсе: это данные или сжатый код, а не пример
+// строку в столько символов и длиннее грамматика не разбирает вовсе: это данные или сжатый код
 const пределДлиныСтроки = 1000;
 // столько миллисекунд грамматика думает над одной строкой, дальше строка докрашивается как есть
 const пределВремениСтроки = 50;
