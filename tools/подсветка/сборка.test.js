@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { собрать } from './собрать.js';
-import { каталогДвижка } from './пути.js';
+import { имяДвижка, каталогДвижка } from './пути.js';
 
 async function свежаяСборка() {
 	const каталог = fs.mkdtempSync(path.join(os.tmpdir(), 'подсветка-сборка-'));
@@ -18,7 +18,7 @@ async function свежаяСборка() {
 test('сборка воспроизводит закоммиченные движок и LICENSE байт в байт', async () => {
 	const { каталог } = await свежаяСборка();
 	try {
-		for (const имя of ['shiki-bsl.js', 'LICENSE']) {
+		for (const имя of [имяДвижка, 'LICENSE']) {
 			const свежий = fs.readFileSync(path.join(каталог, имя));
 			const закоммиченный = fs.readFileSync(path.join(каталогДвижка, имя));
 			assert.ok(свежий.equals(закоммиченный), `${имя}: пересборка даёт ${свежий.length} байт`

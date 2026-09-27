@@ -5,8 +5,10 @@ import { fileURLToPath } from 'node:url';
 
 const статика = fileURLToPath(new URL('../../src/статика/', import.meta.url));
 
+// .mjs — модуль для node любой версии; браузеру расширение безразлично, он смотрит на тип ответа
+export const имяДвижка = 'shiki-bsl.mjs';
 export const каталогДвижка = path.join(статика, 'подсветка');
-export const файлДвижка = path.join(каталогДвижка, 'shiki-bsl.js');
+export const файлДвижка = path.join(каталогДвижка, имяДвижка);
 export const файлЛицензий = path.join(каталогДвижка, 'LICENSE');
 export const файлКлея = path.join(статика, 'openhub-highlight.js');
 export const файлЛиста = path.join(статика, 'openhub.css');

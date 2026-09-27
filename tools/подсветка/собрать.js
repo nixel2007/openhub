@@ -5,10 +5,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import * as esbuild from 'esbuild';
-import { каталогДвижка } from './пути.js';
+import { имяДвижка, каталогДвижка } from './пути.js';
 
 const здесь = path.dirname(fileURLToPath(import.meta.url));
-const имяДвижка = 'shiki-bsl.js';
 const черта = '='.repeat(80);
 
 // Собирает движок и его LICENSE в каталог; возвращает { метафайл } — отчёт esbuild о том,
