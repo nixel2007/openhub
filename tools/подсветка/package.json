@@ -1,0 +1,19 @@
+{
+  "name": "openhub-highlight",
+  "private": true,
+  "description": "Движок подсветки кода BSL на странице пакета OpenHub: сборка вендорного бандла shiki и тесты",
+  "type": "module",
+  "scripts": {
+    "build": "node собрать.js",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@shikijs/core": "4.4.3",
+    "@shikijs/engine-javascript": "4.4.3",
+    "@shikijs/langs-precompiled": "4.4.3",
+    "@shikijs/primitive": "4.4.3",
+    "esbuild": "0.28.2",
+    "linkedom": "0.18.13",
+    "postcss": "8.5.28"
+  }
+}

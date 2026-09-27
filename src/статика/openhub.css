@@ -37,3 +37,26 @@
    с тем, кто его ставит. */
 
 .savebar--dirty { box-shadow: var(--shadow-lg); }
+
+/* --- подсветка кода BSL в README -------------------------------------------------
+   Блоки кода раскрашивает openhub-highlight.js движком shiki с темой css-variables:
+   цвет токена приходит как var(--shiki-…), а значение каждой переменной объявляет
+   область README — из палитры кита. Палитра сама переключается с темой и акцентом
+   читателя, поэтому подсветка идёт за ними без своих ветвлений. Какие переменные
+   тема может выдать, сверяют тесты tools/подсветка. */
+
+[data-highlight] {
+	--shiki-foreground: var(--color-text);
+	--shiki-token-keyword: var(--color-accent);
+	--shiki-token-function: var(--color-accent-300);
+	--shiki-token-parameter: var(--color-text);
+	--shiki-token-constant: var(--color-warning);
+	--shiki-token-string: var(--color-success);
+	--shiki-token-string-expression: var(--color-success);
+	--shiki-token-comment: var(--color-text-muted);
+	--shiki-token-punctuation: var(--color-text-muted);
+	--shiki-token-link: var(--color-accent);
+	--shiki-token-inserted: var(--color-success);
+	--shiki-token-deleted: var(--color-danger);
+	--shiki-token-changed: var(--color-warning);
+}
